@@ -6,7 +6,7 @@
 /*   By: suroh <suroh@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:47:08 by suroh             #+#    #+#             */
-/*   Updated: 2025/04/06 20:22:54 by suroh            ###   ########.fr       */
+/*   Updated: 2025/04/07 12:28:50 by suroh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	is_he_dead(t_monitor_data *mdata)
 	i = -1;
 	while (++i < mdata->shared->number_of_philosophers)
 	{
-		if (he_is_gone(&mdata->philos[i], mdata->philos[i].time_to_die))
+		if (1 == he_is_gone(&mdata->philos[i], mdata->philos[i].time_to_die))
 		{
 			print_msg("died", &mdata->philos[i], mdata->shared,
 				mdata->philos[i].id);

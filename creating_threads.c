@@ -6,7 +6,7 @@
 /*   By: suroh <suroh@student.42lisboa.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:20:21 by suroh             #+#    #+#             */
-/*   Updated: 2025/04/06 19:54:42 by suroh            ###   ########.fr       */
+/*   Updated: 2025/04/07 12:24:09 by suroh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	create_philos_threads(t_shared_data *data,
 		philo_data[i].shared = data;
 		philo_data[i].philo_idx = i;
 		if (pthread_create(&data->philos[i].thread, NULL, &philo_routine,
-				&philo_data[i]) != 0)
+				(void *)&philo_data[i]) != 0)
 			destroy_all("Error while attempting to create Philos Thread",
 				data, forks);
 		i++;
